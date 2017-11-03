@@ -1,0 +1,5 @@
+{
+    "chaincodeId": "mycc",
+    "fcn": "set",
+    "args": ["a", "15"]
+}

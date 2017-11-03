@@ -1,0 +1,9 @@
+{
+    "chaincodeId": "mycc",
+    "fcn": "set",
+    "args": ["a", {
+        "name": "Bart Simpson",
+        "age": 10,
+        "siblings": ["Lisa", "Maggie"]
+    }]
+}

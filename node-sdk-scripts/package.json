@@ -1,0 +1,21 @@
+{
+    "name": "fabric-hands-on-node",
+    "version": "0.0.1",
+    "description": "Accessing fabric ledger via node-sdk",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "fabric-ca-client": "^1.0.1",
+        "fabric-client": "^1.0.1"
+    },
+    "author": "Tobias Latzke",
+    "license": "Apache-2.0",
+    "keywords": [
+        "Blockchain",
+        "Hyperledger",
+        "Fabric",
+        "Workshop"
+    ]
+}
