@@ -1,7 +1,7 @@
 # fabric-dev-harness
-== Network Setup
+## Network Setup
 
-=== 2x2 Network
+### 2x2 Network
 The credentials are setup for 2 Orgs with 2 peers each.
 However, this config is meant for chaincode development adding support for interaction via node-sdk.
 The docker-compose launches only one of the peers and launches it in developer mode.
@@ -9,7 +9,7 @@ The docker-compose launches only one of the peers and launches it in developer m
     cd ./workshops/2x2-network
     docker-compose up
 
-== Chaincode
+## Chaincode
 We are using a docker container to compile and deploy our chaincode.
 The container is launched by the provided docker-compose.
 
@@ -54,14 +54,14 @@ Query and Invoke (via node-sdk)
 NOTE: the file paths must be specified relative to the invoke.js/query.js.
       The easiest is to cd into the custom-cc directory and place your request files there.
 
-== Cheatsheet
+## Cheatsheet
 
-=== SDK
+### SDK
 You can enable advanced logging for the node-sdk, by setting this environment variable
 
     export HFC_LOGGING={"debug":"console"}
 
-=== Chaincode
+### Chaincode
 
 Using docker containers for the compile and run workflow is ok, but has a major drawback:
 if you have to stop the network (`dcp down`) this will also close your cli and chaincode terminal.
