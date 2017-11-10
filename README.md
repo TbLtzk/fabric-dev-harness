@@ -39,6 +39,11 @@ Query and Invoke (from within cli container)
     peer chaincode invoke -n mycc -c '{"Args":["set", "a", "20"]}' -C mychannel
     peer chaincode query -n mycc -c '{"Args":["get","a"]}' -C mychannel
 
+For interaction via node-sdk, first copy the contents of the node-sdk-scripts/creds directory into `~/.hfc-key-store`
+
+    mkdir ~/.hfc-key-store
+    cp creds/* ~/.hfc-key-store/    
+
 Query and Invoke (via node-sdk)
 
     // 2x2-network, only
