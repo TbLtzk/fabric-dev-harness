@@ -97,17 +97,17 @@ With the JSON package you can do JSON encoding and decoding in your go applicati
 
 First define a struct with your object structure (make fields public by using upper case)
 
-type Payload struct {
-    Page   int
-    Fruits []string
-}
+    type Payload struct {
+        Page   int
+        Fruits []string
+    }
 
 By default fields the field names are also the JSON keys. You can use tags to define different json keys (e.g. for lower case)
 
-type Payload struct {
-    Page   int      `json:"page"`
-    Fruits []string `json:"fruits"`
-}
+    type Payload struct {
+        Page   int      `json:"page"`
+        Fruits []string `json:"fruits"`
+    }
 
 you can then define an instance of this struct and use the Unmarshal method to decode a byte array and fill your struct with the data.
 
