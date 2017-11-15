@@ -72,6 +72,6 @@ Using docker containers for the compile and run workflow is ok, but has a major 
 if you have to stop the network (`dcp down`) this will also close your cli and chaincode terminal.
 After restarting the network you have to attach to both containers again, AND you lost your command history.
 
-Unfortunately the instantiation cannot be done twice with the same chaincode name. For developing the init function this means
+Unfortunately the instantiation cannot be done twice with the same chaincode name. For developing the init function, this means
 A) you have to restart the network every time you test (with the mentioned drawback) or
 B) instantiate with a different name every time.
