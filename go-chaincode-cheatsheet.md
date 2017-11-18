@@ -28,6 +28,22 @@ Go has implicit semantics about the captialization of method names. Upper case m
     var i = 2 // the type can be omitted, if it can be inferred by the initializer
     i:=2 // shorthand for var i=2
 
+### range
+With the range keyword you have a convenient way to iterate over the elements in a collection.
+It is applicable to maps, arrays and slices.
+
+    nums := []int{2, 3, 4}
+    for i, val := range nums {
+        fmt.Println("index:", i)
+        fmt.Println("value:", val)
+    }
+
+if you don't need the index, you can use the so-called blank identifier `_`
+
+    for _, val := range nums {
+        fmt.Println("value:", val)
+    }
+
 ### online docs
 If you struggle more with golang than with chaincode, it might help to take the [tour of go](https://tour.golang.org), espacially the [basics section](https://tour.golang.org/basics/1)
 
@@ -54,7 +70,7 @@ Read a value from the ledger.
 
 The result is always a byte array ([]byte) you might need to use explicit conversion for further processing, e.g.
 
-    strValue = string(value)
+    strValue := string(value)
     
 ### PutState
 Write a value to the ledger.
@@ -64,6 +80,17 @@ Write a value to the ledger.
 	err := stub.PutState(key, bytes)
 
 PutState accepts a string as key parameter and a byte array as value (and only a byte array).
+If a value for the given key exists, it is overwritten.
+
+NOTE: this method modifies the world state. Any chaincode operation using this method has to be called via invoke (not query)
+
+### DelState
+Delete value from the ledger.
+
+    key := args[0]
+    err := stub.DelState(key)
+
+DelState accepts a string as key parameter.
 
 NOTE: this method modifies the world state. Any chaincode operation using this method has to be called via invoke (not query)
 
