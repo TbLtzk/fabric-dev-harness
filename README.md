@@ -9,6 +9,22 @@ The docker-compose launches only one of the peers and launches it in developer m
     cd ./workshops/2x2-network
     docker-compose up
 
+On success the logs should end with something like
+
+    cli                       | 2018-06-26 18:06:45.081 UTC [channelCmd] executeJoin -> INFO 006 Peer joined the channel!
+
+NOTE: Windows users
+
+if console output ends with
+
+    cli exited with code 126
+
+you can scroll up the logs and see if you get the following line (cli logs have dedicated color)
+
+    cli                       | /bin/bash: ./script.sh: /bin/bash^M: bad interpreter: No such file or directory
+
+if that's the case, you'll probably have to change the line endings of config/script.sh from Windows (CR/LF) to Unix (LF)
+
 ## Chaincode
 We are using a docker container to compile and deploy our chaincode.
 The container is launched by the provided docker-compose.
