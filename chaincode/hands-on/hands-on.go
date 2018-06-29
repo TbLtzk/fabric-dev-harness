@@ -46,8 +46,11 @@ func (t *Chaincode) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 	fn, args := stub.GetFunctionAndParameters()
 	debug("try to call function '%s' with %d args", fn, len(args))
 
+	caller, err := stub.GetCreator()
+	debug("invoked by %x", caller)
+
 	var result string
-	var err error
+	// var err error
 	if fn == "set" {
 		result, err = set(stub, args)
 	} else if fn == "get" {
